@@ -1,0 +1,133 @@
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="top-header">
+            <div class="container h-100" style=" display: flex; align-items: center; width: 100vw;">
+                <div style=" display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <!-- Breaking News Area -->
+                    <h5 class="breaking-news-title">Breaking news</h5>
+                    <svg *ngIf="!user"  (click)="openModal(template)" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-left log" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
+                        <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+                      </svg>  
+
+                     <svg (click)="sair()" style="color: #fff;" *ngIf="user"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right sair" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                      </svg>
+                      
+                
+                </div>
+                &nbsp;  &nbsp;  <span style="color: #fff;">{{ user }}</span>
+            </div>
+
+ 
+            <ng-template #template>
+              <div class="modal-header">
+                <h4 class="modal-title pull-left">Login</h4>
+                <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                  <span aria-hidden="true" class="visually-hidden">&times; Login</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                    <form action="" [formGroup]="uploadForm" (ngSubmit)="logar()">
+                        <label for="nome">Email:</label>
+                        <input type="text" class="form-control" formControlName="email"  placeholder="Digite seu email" style="border-bottom: 1px solid #eee;">
+                        <label for="nome">Senha:</label>
+                        <input type="password" class="form-control" formControlName="senha"  placeholder="Senha" style="border-bottom: 1px solid #eee; padding-right: 0%;">
+    
+                        <button type="submit" class="btn btn-primary" style="margin-top: 20px;" (click)="modalRef?.hide()">
+                            Entrar
+                          </button>
+                    </form>
+                
+                  </div>
+                  <span>Poste uma noticia ->  <strong style="color: crimson;">{{ email }}</strong> |  Senha: <strong style="color: crimson;">123</strong></span>
+
+              </div>
+            </ng-template>
+
+        </div>
+        <!-- Middle Header Area -->
+        <div class="middle-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Logo Area -->
+                    <div class="col-12 col-md-4">
+                        <div class="logo-area">
+                            <a href="index.html"><img src="assets/img/core-img/logo.png" alt="logo"></a>
+
+
+                        </div>
+                    </div>
+                    <!-- Header Advert Area -->
+                    <div class="col-12 col-md-8">
+                        <div class="header-advert-area">
+                            <a href="#"><img src="assets/img/bg-img/top-advert.png" alt="header-add"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Header Area -->
+        <div class="bottom-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="main-menu">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                                <div class="collapse navbar-collapse" id="gazetteMenu">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#">Today <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="index.html">Home</a>
+                                                <a class="dropdown-item" href="catagory.html">Catagory</a>
+                                                <a class="dropdown-item" href="single-post.html">Single Post</a>
+                                                <a class="dropdown-item" href="about-us.html">About Us</a>
+                                                <a class="dropdown-item" href="contact.html">Contact</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Politics</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Lifestyle</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Travel</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Health</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Entertainment</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">sport</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Search Form -->
+                                    <div class="header-search-form mr-auto">
+                                        <form action="#">
+                                            <input type="search" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                            <input class="d-none" type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                    <!-- Search btn -->
+                                    <div id="searchbtn">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
