@@ -34,4 +34,3 @@ ng serve
 * **Ed Carlos** - desenvolvedor full stack [Linkedin](https://www.linkedin.com/in/ed-furtado?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)*
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
